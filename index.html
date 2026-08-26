@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pojištění – Aktuální priority a roadmapa</title>
+  <meta name="description" content="Prezentace: Pojištění – Aktuální priority a roadmapa" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Progress bar -->
+  <div class="progress-bar" id="progressBar" role="progressbar" aria-label="Průběh prezentace" aria-valuenow="1" aria-valuemin="1" aria-valuemax="8"></div>
+
+  <!-- Slide dots navigation -->
+  <nav class="slide-dots" aria-label="Navigace slidů">
+    <button class="slide-dot is-active" data-slide="0" aria-label="Slide 1: Úvod"></button>
+    <button class="slide-dot" data-slide="1" aria-label="Slide 2: Hlavní priority"></button>
+    <button class="slide-dot" data-slide="2" aria-label="Slide 3: Na čem pracujeme"></button>
+    <button class="slide-dot" data-slide="3" aria-label="Slide 4: Business Coaches"></button>
+    <button class="slide-dot" data-slide="4" aria-label="Slide 5: Výsledky"></button>
+    <button class="slide-dot" data-slide="5" aria-label="Slide 6: Co nás čeká"></button>
+    <button class="slide-dot" data-slide="6" aria-label="Slide 7: Roadmapa"></button>
+    <button class="slide-dot" data-slide="7" aria-label="Slide 8: Závěr"></button>
+  </nav>
+
+  <!-- Bottom controls -->
+  <nav class="nav-controls" aria-label="Ovládání prezentace">
+    <button class="nav-btn" id="btnPrev" aria-label="Předchozí slide" disabled>
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+        <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    <span class="slide-counter" id="slideCounter" aria-live="polite" aria-atomic="true">1 / 8</span>
+    <button class="nav-btn" id="btnNext" aria-label="Další slide">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+        <path d="M7.5 5L12.5 10L7.5 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    <button class="fullscreen-btn" id="btnFullscreen" aria-label="Celá obrazovka">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true" id="iconFullscreen">
+        <path d="M2 6V2H6M12 2H16V6M16 12V16H12M6 16H2V12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+  </nav>
+
+  <!-- Presentation wrapper -->
+  <main class="presentation-wrap" id="presentationWrap" aria-label="Prezentace: Pojištění">
+
+    <!-- ========== SLIDE 1: ÚVOD ========== -->
+    <section class="slide" id="slide-1" role="region" aria-label="Slide 1: Úvod" aria-hidden="false">
+
+      <!-- Decorative background shapes -->
+      <div class="intro-deco" aria-hidden="true">
+        <div class="intro-deco-circle" style="width:380px;height:380px;top:-120px;right:-80px;"></div>
+        <div class="intro-deco-circle" style="width:180px;height:180px;bottom:60px;left:38%;opacity:0.07;"></div>
+        <div class="intro-deco-rect" style="width:200px;height:120px;bottom:-30px;right:22%;border-color:var(--color-apple);opacity:0.06;"></div>
+        <div class="intro-deco-rect" style="width:80px;height:80px;top:30%;left:55%;border-color:var(--color-teal);opacity:0.08;transform:rotate(-12deg);"></div>
+      </div>
+
+      <div class="intro-content">
+        <div class="intro-eyebrow">
+          <span class="intro-eyebrow-line"></span>
+          Přehled priorit a roadmapy
+        </div>
+        <h1 class="intro-main-title">
+          Poji<span>štění</span>
+        </h1>
+        <p class="intro-subtitle">Aktuální priority a roadmapa</p>
+        <p class="intro-desc">
+          Přehled toho, na čem právě pracujeme, co jsme už posunuli a co nás čeká v následujících měsících.
+        </p>
+      </div>
+
+      <!-- Geometric motif (decorative) -->
+      <div class="intro-motif" aria-hidden="true">
+        <svg width="280" height="280" viewBox="0 0 280 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Outer rounded rect -->
+          <rect x="20" y="20" width="240" height="240" rx="40" stroke="#0CB43F" stroke-width="2.5" stroke-opacity="0.18"/>
+          <!-- Inner rounded rect -->
+          <rect x="55" y="55" width="170" height="170" rx="28" stroke="#0CB43F" stroke-width="2" stroke-opacity="0.12"/>
+          <!-- Connecting nodes -->
+          <circle cx="140" cy="60" r="14" stroke="#0CB43F" stroke-width="2" stroke-opacity="0.4" fill="white"/>
+          <circle cx="60" cy="160" r="10" stroke="#02A3A4" stroke-width="2" stroke-opacity="0.4" fill="white"/>
+          <circle cx="220" cy="160" r="10" stroke="#02A3A4" stroke-width="2" stroke-opacity="0.4" fill="white"/>
+          <circle cx="140" cy="220" r="14" stroke="#028661" stroke-width="2" stroke-opacity="0.4" fill="white"/>
+          <!-- Lines between nodes -->
+          <line x1="140" y1="74" x2="140" y2="206" stroke="#0CB43F" stroke-width="1.5" stroke-opacity="0.18" stroke-dasharray="6 4"/>
+          <line x1="70" y1="160" x2="210" y2="160" stroke="#0CB43F" stroke-width="1.5" stroke-opacity="0.18" stroke-dasharray="6 4"/>
+          <!-- Central shape -->
+          <rect x="108" y="108" width="64" height="64" rx="16" fill="#0CB43F" fill-opacity="0.08" stroke="#0CB43F" stroke-width="2" stroke-opacity="0.35"/>
+          <!-- Shield inside center -->
+          <path d="M140 120 L152 126 V138 C152 146 140 152 140 152 C140 152 128 146 128 138 V126 L140 120Z" stroke="#0CB43F" stroke-width="2" stroke-opacity="0.6" fill="none" stroke-linejoin="round"/>
+        </svg>
+      </div>
+
+    </section>
+
+    <!-- ========== SLIDE 2: HLAVNÍ PRIORITY ========== -->
+    <section class="slide" id="slide-2" role="region" aria-label="Slide 2: Hlavní priority" aria-hidden="true">
+
+      <div class="slide-header">
+        <span class="slide-label">Priority</span>
+        <h2 class="slide-title">Co je teď naše hlavní priorita?</h2>
+      </div>
+
+      <div class="priorities-grid">
+
+        <!-- Karta 1: Nový HADES -->
+        <article class="priority-card priority-card--apple">
+          <div class="priority-icon">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+              <!-- Learning path / connected steps icon -->
+              <circle cx="6" cy="14" r="3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="14" cy="7" r="3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="22" cy="14" r="3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="14" cy="21" r="3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <line x1="9.2" y1="12.2" x2="11.2" y2="9.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              <line x1="16.8" y1="9.2" x2="18.8" y2="12.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              <line x1="18.8" y1="15.8" x2="16.8" y2="18.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              <line x1="11.2" y1="18.8" x2="9.2" y2="15.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="priority-name">Nový HADES</h3>
+          <p class="priority-desc">Připravujeme vzdělávání na nový HADES – vzdělávací cestu pro obchodní síť.</p>
+          <span class="priority-tag">Vzdělávání</span>
+        </article>
+
+        <!-- Karta 2: Pojištění majetku -->
+        <article class="priority-card priority-card--teal">
+          <div class="priority-icon">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+              <!-- House with shield icon -->
+              <path d="M4 13L14 4L24 13V24H18V18H10V24H4V13Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M14 10L18 12.5V17C18 19.8 14 22 14 22C14 22 10 19.8 10 17V12.5L14 10Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="priority-name">Pojištění majetku</h3>
+          <p class="priority-desc">Podporujeme plnění obchodních cílů v oblasti pojištění majetku.</p>
+          <span class="priority-tag">Obchodní cíle</span>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ========== SLIDE 3: NA ČEM PRACUJEME ========== -->
+    <section class="slide" id="slide-3" role="region" aria-label="Slide 3: Na čem právě pracujeme" aria-hidden="true">
+
+      <div class="slide-header">
+        <span class="slide-label">Aktuální práce</span>
+        <h2 class="slide-title">Na čem konkrétně právě pracujeme?</h2>
+      </div>
+
+      <div class="work-grid">
+
+        <!-- Část 1: HADES -->
+        <div class="work-section">
+          <div class="work-section-header">
+            <div class="work-section-icon work-section-icon--apple">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M3 10L10 3L17 10V17H13V13H7V17H3V10Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="work-section-title">Vzdělávací cesta na nový HADES</h3>
+          </div>
+
+          <div class="process-flow">
+
+            <div class="process-node">
+              <div class="process-node-left">
+                <div class="process-dot">1</div>
+                <div class="process-line"></div>
+              </div>
+              <div class="process-node-text">
+                <div class="process-node-label">Připravujeme</div>
+                <div class="process-node-desc">Příprava obsahu a struktury vzdělávací cesty</div>
+              </div>
+            </div>
+
+            <div class="process-node">
+              <div class="process-node-left">
+                <div class="process-dot">2</div>
+                <div class="process-line"></div>
+              </div>
+              <div class="process-node-text">
+                <div class="process-node-label">Vyrábíme</div>
+                <div class="process-node-desc">Výroba vzdělávacích materiálů a nástrojů</div>
+              </div>
+            </div>
+
+            <div class="process-node">
+              <div class="process-node-left">
+                <div class="process-dot">3</div>
+                <div class="process-line"></div>
+              </div>
+              <div class="process-node-text">
+                <div class="process-node-label">Testujeme</div>
+                <div class="process-node-desc">Testování vzdělávací cesty v praxi</div>
+              </div>
+            </div>
+
+            <div class="process-node">
+              <div class="process-node-left">
+                <div class="process-dot process-dot" style="background:var(--color-forest)">4</div>
+              </div>
+              <div class="process-node-text">
+                <div class="process-node-label" style="color:var(--color-forest)">Ověřujeme</div>
+                <div class="process-node-desc">Ověřujeme hypotézu učící kaskády</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Část 2: Pojištění majetku -->
+        <div class="work-section">
+          <div class="work-section-header">
+            <div class="work-section-icon work-section-icon--teal">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M10 2L15 5V10C15 13.5 10 16 10 16C10 16 5 13.5 5 10V5L10 2Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="work-section-title">Podpora pojištění majetku</h3>
+          </div>
+
+          <div class="tool-cards">
+
+            <div class="tool-card">
+              <div class="tool-card-icon">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                  <rect x="2" y="4" width="14" height="10" rx="2.5" stroke="currentColor" stroke-width="1.7"/>
+                  <path d="M6 8H12M6 11H10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="tool-card-text">Vytváříme <strong>případové studie</strong> pro pojištění majetku</div>
+            </div>
+
+            <div class="tool-card">
+              <div class="tool-card-icon">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                  <circle cx="9" cy="9" r="6.5" stroke="currentColor" stroke-width="1.7"/>
+                  <path d="M6.5 9C6.5 9 7.5 11 9 11C10.5 11 11.5 9 11.5 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  <circle cx="7" cy="7.5" r="0.9" fill="currentColor"/>
+                  <circle cx="11" cy="7.5" r="0.9" fill="currentColor"/>
+                </svg>
+              </div>
+              <div class="tool-card-text">Vytváříme <strong>AI simulace</strong> pro reálná obchodní setkání</div>
+            </div>
+
+            <div class="tool-card">
+              <div class="tool-card-icon">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                  <path d="M9 2L14 5.5V12.5L9 16L4 12.5V5.5L9 2Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+                  <path d="M6.5 9L8 10.5L11.5 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="tool-card-text"><strong>Testujeme v praxi</strong> s Business Coaches a obchodní sítí</div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========== SLIDE 4: BUSINESS COACHES ========== -->
+    <section class="slide" id="slide-4" role="region" aria-label="Slide 4: Business Coaches" aria-hidden="true">
+
+      <div class="slide-header">
+        <span class="slide-label">Zapojení</span>
+        <h2 class="slide-title">Jak do toho zapojujeme Business Coaches?</h2>
+      </div>
+
+      <div class="bc-layout">
+
+        <!-- Central node -->
+        <div class="bc-center" aria-hidden="true">
+          <div class="bc-central-node">
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+              <circle cx="18" cy="12" r="5" stroke="white" stroke-width="2"/>
+              <path d="M8 28C8 23.6 12.5 20 18 20C23.5 20 28 23.6 28 28" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <span class="bc-central-label">Business<br>Coaches</span>
+          </div>
+        </div>
+
+        <!-- Flow steps -->
+        <div class="bc-flow">
+
+          <div class="bc-step">
+            <div class="bc-step-left">
+              <div class="bc-step-dot">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M3 8.5L6.5 12L13 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="bc-step-connector"></div>
+            </div>
+            <div class="bc-step-content">
+              <div class="bc-step-title">Testování simulací a trenažérů</div>
+              <div class="bc-step-desc">BC testují připravované simulace a trenažéry před nasazením</div>
+            </div>
+          </div>
+
+          <div class="bc-step">
+            <div class="bc-step-left">
+              <div class="bc-step-dot">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <rect x="3" y="3" width="10" height="10" rx="2.5" stroke="currentColor" stroke-width="2"/>
+                  <path d="M6 8H10M8 6V10" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="bc-step-connector"></div>
+            </div>
+            <div class="bc-step-content">
+              <div class="bc-step-title">Ověřovací webináře</div>
+              <div class="bc-step-desc">BC se zapojují do ověřovacích webinářů, které zároveň podporují jejich interní upskilling</div>
+            </div>
+          </div>
+
+          <div class="bc-step">
+            <div class="bc-step-left">
+              <div class="bc-step-dot">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="2"/>
+                  <path d="M8 5.5V8.5L10 10" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="bc-step-connector"></div>
+            </div>
+            <div class="bc-step-content">
+              <div class="bc-step-title">Spolupráce s KAMy</div>
+              <div class="bc-step-desc">BC spolupracují s Key Account Managery na podpoře obchodní sítě</div>
+            </div>
+          </div>
+
+          <div class="bc-step">
+            <div class="bc-step-left">
+              <div class="bc-step-dot">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M4 8C4 5.8 5.8 4 8 4C10.2 4 12 5.8 12 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M4 10H12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M6 12H10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+            </div>
+            <div class="bc-step-content">
+              <div class="bc-step-title">Sdílení zkušeností ze zakázek</div>
+              <div class="bc-step-desc">BC přenášejí informace a zkušenosti ze zakázek zpět do týmu</div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========== SLIDE 5: VÝSLEDKY ========== -->
+    <section class="slide" id="slide-5" role="region" aria-label="Slide 5: Co jsme vytvořili" aria-hidden="true">
+
+      <div class="slide-header">
+        <span class="slide-label">Výsledky</span>
+        <h2 class="slide-title">Co už jsme vytvořili nebo posunuli?</h2>
+      </div>
+
+      <div class="results-layout">
+
+        <!-- Metric cards -->
+        <div class="metrics-row">
+          <div class="metric-card">
+            <div class="metric-number" aria-label="6 simulací ve Skilldriveru">6</div>
+            <div class="metric-label">simulací ve Skilldriveru</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-number" aria-label="6 trenažérů v Copilotu">6</div>
+            <div class="metric-label">trenažérů v Copilotu</div>
+          </div>
+        </div>
+
+        <!-- Achievements -->
+        <div class="achievements-grid">
+
+          <div class="achievement-card">
+            <div class="achievement-icon">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <rect x="3" y="3" width="14" height="14" rx="3" stroke="currentColor" stroke-width="1.8"/>
+                <path d="M7 10L9 12L13 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div>
+              <div class="achievement-badge achievement-badge--done">Hotovo</div>
+              <div class="achievement-text">Fyzický vzdělávací den zaměřený na životní a majetkové pojištění</div>
+            </div>
+          </div>
+
+          <div class="achievement-card">
+            <div class="achievement-icon">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.8"/>
+                <path d="M10 6V10.5L13 12.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div>
+              <div class="achievement-badge achievement-badge--progress">Probíhá</div>
+              <div class="achievement-text">Schůzky Business Coaches s KAMy</div>
+            </div>
+          </div>
+
+          <div class="achievement-card">
+            <div class="achievement-icon">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <rect x="3" y="5" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.8"/>
+                <path d="M7 9H13M7 12H11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div>
+              <div class="achievement-badge achievement-badge--done">Hotovo</div>
+              <div class="achievement-text">BC umí pracovat s reporty na pojištění</div>
+            </div>
+          </div>
+
+          <div class="achievement-card">
+            <div class="achievement-icon">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M4 14C4 11.8 6.5 10 10 10C13.5 10 16 11.8 16 14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                <circle cx="10" cy="6.5" r="3" stroke="currentColor" stroke-width="1.8"/>
+              </svg>
+            </div>
+            <div>
+              <div class="achievement-badge achievement-badge--progress">Probíhá</div>
+              <div class="achievement-text">BC využívají reporty při podpoře obchodní sítě</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SLIDE 6: CO NÁS ČEKÁ ========== -->
+    <section class="slide" id="slide-6" role="region" aria-label="Slide 6: Co nás čeká" aria-hidden="true">
+
+      <div class="slide-header">
+        <span class="slide-label">Plán</span>
+        <h2 class="slide-title">Co nás čeká v následujících 2–3 měsících?</h2>
+      </div>
+
+      <div class="next-groups">
+
+        <!-- OBSAH -->
+        <div class="next-group next-group--content">
+          <div class="next-group-label">
+            <div class="next-group-label-dot"></div>
+            Obsah
+          </div>
+          <div class="next-item">
+            Vytvoření plánu obsahů do Česlava
+          </div>
+        </div>
+
+        <!-- SPOLUPRÁCE -->
+        <div class="next-group next-group--cooperation">
+          <div class="next-group-label">
+            <div class="next-group-label-dot"></div>
+            Spolupráce
+          </div>
+          <div class="next-item">
+            Vyhodnocení prvních zkušeností ze spolupráce Business Coaches s KAMy
+          </div>
+          <div class="next-item">
+            Úprava způsobu spolupráce a sdílení informací ze zakázek podle zpětné vazby
+          </div>
+        </div>
+
+        <!-- VZDĚLÁVÁNÍ -->
+        <div class="next-group next-group--education">
+          <div class="next-group-label">
+            <div class="next-group-label-dot"></div>
+            Vzdělávání
+          </div>
+          <div class="next-item">
+            Příprava a realizace dalšího fyzického vzdělávacího dne
+          </div>
+          <div class="next-item">
+            Dokončení, otestování a nasazení vzdělávací cesty na nový HADES
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========== SLIDE 7: ROADMAPA ========== -->
+    <section class="slide" id="slide-7" role="region" aria-label="Slide 7: Roadmapa" aria-hidden="true">
+
+      <div class="slide-header">
+        <span class="slide-label">Plánování</span>
+        <h2 class="slide-title">Roadmapa</h2>
+      </div>
+
+      <div class="roadmap-layout">
+        <div class="roadmap-track">
+
+          <!-- ZÁŘÍ -->
+          <div class="roadmap-period">
+            <div class="roadmap-milestone" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+                <circle cx="11" cy="11" r="5" stroke="white" stroke-width="2"/>
+                <path d="M11 7V11L13.5 13.5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="roadmap-month">Září</div>
+            <div class="roadmap-items">
+              <div class="roadmap-item">Testování nástrojů Business Coaches pro nový HADES</div>
+              <div class="roadmap-item">Sběr prvních zkušeností ze spolupráce s KAMy</div>
+            </div>
+          </div>
+
+          <!-- ŘÍJEN -->
+          <div class="roadmap-period">
+            <div class="roadmap-milestone" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+                <path d="M6 11L9.5 14.5L16 8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="roadmap-month">Říjen</div>
+            <div class="roadmap-items">
+              <div class="roadmap-item">Ověření vzdělávací cesty a učící kaskády</div>
+              <div class="roadmap-item">Testování nástrojů Business Coaches</div>
+              <div class="roadmap-item">Sběr prvních zkušeností ze spolupráce s KAMy</div>
+              <div class="roadmap-item">Tvorba obsahů do Česlava v oblasti pojištění</div>
+            </div>
+          </div>
+
+          <!-- LISTOPAD / PROSINEC -->
+          <div class="roadmap-period roadmap-period--highlight">
+            <div class="roadmap-milestone" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+                <path d="M11 5V11L15 14" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="11" cy="11" r="7" stroke="white" stroke-width="2"/>
+              </svg>
+            </div>
+            <div class="roadmap-month">Listopad / Prosinec</div>
+            <div class="roadmap-items">
+              <div class="roadmap-item">Vyhodnocení testování</div>
+              <div class="roadmap-item">Úprava vzdělávací cesty</div>
+              <div class="roadmap-item">Nastavení efektivnějšího sdílení informací ze zakázek</div>
+              <div class="roadmap-item">Testování Česlava v oblasti pojištění</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SLIDE 8: ZÁVĚR ========== -->
+    <section class="slide" id="slide-8" role="region" aria-label="Slide 8: Závěrečné shrnutí" aria-hidden="true">
+
+      <div class="slide-header">
+        <span class="slide-label">Shrnutí</span>
+        <h2 class="slide-title">Kam směřujeme</h2>
+      </div>
+
+      <div class="summary-grid">
+
+        <article class="summary-pillar">
+          <div class="summary-pillar-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <circle cx="6" cy="12" r="2.5" stroke="currentColor" stroke-width="1.8"/>
+              <circle cx="12" cy="5" r="2.5" stroke="currentColor" stroke-width="1.8"/>
+              <circle cx="18" cy="12" r="2.5" stroke="currentColor" stroke-width="1.8"/>
+              <circle cx="12" cy="19" r="2.5" stroke="currentColor" stroke-width="1.8"/>
+              <line x1="8.2" y1="10.5" x2="10.2" y2="7.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              <line x1="13.8" y1="7.2" x2="15.8" y2="10.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              <line x1="15.8" y1="13.5" x2="13.8" y2="16.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              <line x1="10.2" y1="16.8" x2="8.2" y2="13.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="summary-pillar-num">01</div>
+          <h3 class="summary-pillar-name">Nový HADES</h3>
+          <p class="summary-pillar-desc">Dokončit, ověřit a nasadit vzdělávací cestu.</p>
+        </article>
+
+        <article class="summary-pillar">
+          <div class="summary-pillar-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 20V10L12 4L20 10V20H15V15H9V20H4Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M12 8L16 10.5V15C16 18 12 20 12 20C12 20 8 18 8 15V10.5L12 8Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="summary-pillar-num">02</div>
+          <h3 class="summary-pillar-name">Pojištění majetku</h3>
+          <p class="summary-pillar-desc">Podpořit obchodní cíle pomocí případových studií a AI simulací.</p>
+        </article>
+
+        <article class="summary-pillar">
+          <div class="summary-pillar-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <circle cx="12" cy="8" r="3.5" stroke="currentColor" stroke-width="1.8"/>
+              <path d="M5 20C5 16.7 8.1 14 12 14C15.9 14 19 16.7 19 20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="summary-pillar-num">03</div>
+          <h3 class="summary-pillar-name">Business Coaches</h3>
+          <p class="summary-pillar-desc">Dále rozvíjet jejich zapojení do testování, upskillingu a spolupráce s KAMy.</p>
+        </article>
+
+        <article class="summary-pillar">
+          <div class="summary-pillar-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 3C7 3 3 7 3 12C3 17 7 21 12 21" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M21 12C21 9.5 19.7 7.3 17.8 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M16 12L18.5 14.5L21 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M8 12L5.5 9.5L3 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="summary-pillar-num">04</div>
+          <h3 class="summary-pillar-name">Ověřování v praxi</h3>
+          <p class="summary-pillar-desc">Vyhodnocovat zkušenosti, sbírat zpětnou vazbu a podle ní upravovat další postup.</p>
+        </article>
+
+      </div>
+
+      <div class="summary-closing">
+        <p class="summary-closing-text">
+          Tvoříme, testujeme, ověřujeme a postupně nasazujeme řešení do praxe.
+        </p>
+      </div>
+
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
